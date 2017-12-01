@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 14:04:01 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/01 14:29:09 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct		s_var_struct_try
 	char	*map;
 }					t_var_struct_try;
 
+int					ft_open(char *name);
+char				*ft_read(int fd);
 int					count_tetri(char *map);
 int					check_valid_file(const char *map);
 char				**fill_tab(char *map);
