@@ -6,7 +6,7 @@
 #    By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/15 10:56:13 by asandolo          #+#    #+#              #
-#    Updated: 2017/12/01 13:15:20 by asandolo         ###   ########.fr        #
+#    Updated: 2017/12/01 13:58:36 by asandolo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ BOLDRED=\033[1m\033[31m
 BOLDWHITE=\033[1m\033[37m
 
 NAME = fillit
-SRC = src/main.c src/ft_solve.c
+SRC = src/main.c src/ft_solve.c src/ft_or.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra -ggdb
 CC = gcc

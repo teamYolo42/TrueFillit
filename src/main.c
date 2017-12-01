@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 13:25:06 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/01 13:57:42 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,46 @@ static void		print_error(void)
 	ft_putstr("error\n");
 }
 
+static	int		ft_fillit(char *map)
+{
+	char	**smap;
+	int		count;
+
+	if (check_valid_file(map))
+	{
+		count = count_tetri(map);
+		smap = fill_tab(count, map);
+		if (check_valid_tetri_nb_diez(smap, count) && count <= 26)
+		{
+			up_left(smap, count);
+			if (check_valid_tetri(smap, count, init_tetritype()))
+			{
+				ft_replace_char_all(smap, count);
+				if (solve(count, smap, min_size(count)))
+					return (1);
+			}
+		}
+	}
+	return (0);
+}
+
 int				main(int ac, char **av)
 {
-	char	**tab;
-	int		count;
+	char	*map;
+	int		fd;
 
 	if (ac != 2)
 	{
 		ft_putstr("usage: fillit input_file\n");
-		return (0);
+		return (1);
 	}
-	if (check_valid_file(av[1]))
+	if ((fd = ft_open(av[1])) == -1)
 	{
-		count = count_tetri(av[1]);
-		tab = fill_tab(count, av[1]);
-		if (check_valid_tetri_nb_diez(tab, count) && count <= 26)
-		{
-			up_left(tab, count);
-			if (check_valid_tetri(tab, count, init_tetritype()))
-			{
-				ft_replace_char_all(tab, count);
-				if (solve(count, tab, min_size(count)))
-					return (0);
-			}
-		}
+		ft_putendl("error");
+		return (1);
 	}
+	map = ft_read(fd);
+	if (ft_fillit(map))
+		return (0);
 	print_error();
 }
