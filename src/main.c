@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 14:38:10 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/12/01 16:22:13 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_fillit(char *map)
 			up_left(smap, count);
 			if (check_valid_tetri(smap, count, init_tetritype()))
 			{
-				ft_replace_char_all(smap, count);
+				ft_replace_char_all(smap);
 				if (solve(count, smap, min_size(count)))
 					return (1);
 			}
