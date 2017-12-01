@@ -35,7 +35,7 @@ typedef struct		s_var_struct_try
 	char	*map;
 }					t_var_struct_try;
 
-int					count_tetri(char *filename);
+int					count_tetri(char *map);
 int					check_valid_file(const char *filename);
 char				**fill_tab(int count, char *filename);
 char				**init_tetritype(void);
