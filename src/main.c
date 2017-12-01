@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 14:32:48 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/01 14:38:10 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_fillit(char *map)
 	{
 		count = count_tetri(map);
 		smap = fill_tab(map);
-		if (check_valid_tetri_nb_diez(smap, count) && count <= 26)
+		if (count <= 26)
 		{
 			up_left(smap, count);
 			if (check_valid_tetri(smap, count, init_tetritype()))
