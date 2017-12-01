@@ -6,13 +6,13 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:14:39 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 13:24:39 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/12/01 14:42:05 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char		*alloc_map(char *map, size_t size)
+static char		*alloc_map(char *map, size_t size)
 {
 	if (map)
 		free(map);
@@ -23,7 +23,7 @@ char		*alloc_map(char *map, size_t size)
 	return (map);
 }
 
-char		*try(t_var_struct_try var, int size, char **tetris, int t)
+static char		*try(t_var_struct_try var, int size, char **tetris, int t)
 {
 	int			i;
 	char		*temp;
