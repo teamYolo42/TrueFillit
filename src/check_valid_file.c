@@ -6,7 +6,7 @@
 /*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:06:30 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/01 14:07:47 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/12/01 14:17:32 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		check_size(char *str)
 
 	nb_n = 0;
 	local_i = 0;
+	i = 0;
 	while (str[i])
 	{
 		local_i = 0;
@@ -70,9 +71,7 @@ int		check_size(char *str)
 			local_i++;
 			i++;
 		}
-		if (str[i] == '\n')
-			return (0);
-		if (nb_n != 5)
+		if (nb_n != 5 || str[i] == '\n')
 			return (0);
 		nb_n = 0;
 		if (str[i - 1] == '\0')
