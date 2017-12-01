@@ -35,8 +35,6 @@ typedef struct		s_var_struct_try
 	char	*map;
 }					t_var_struct_try;
 
-int					ft_open(char *name);
-char				*ft_read(int fd);
 int					count_tetri(char *map);
 int					check_valid_file(const char *map);
 char				**fill_tab(char *map);
@@ -52,5 +50,4 @@ int					check_valid_pos(int pos, int taille_map, char *tetri,
 					char *map);
 int					min_size(int n);
 int					solve(int count, char **tab, int size);
-
 #endif
