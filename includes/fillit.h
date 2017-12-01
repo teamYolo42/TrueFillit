@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 13:46:14 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/01 14:07:28 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,9 @@ typedef struct		s_var_struct_try
 	char	*map;
 }					t_var_struct_try;
 
-int					ft_open(char *name);
-char				*ft_read(int fd);
 int					count_tetri(char *map);
-int					check_valid_file(const char *map);
-char				**fill_tab(int count, char *map);
+int					check_valid_file(const char *filename);
+char				**fill_tab(int count, char *filename);
 char				**init_tetritype(void);
 int					check_valid_tetri(char **tab, int nb, char **tetritype);
 int					check_valid_tetri_nb_diez(char **tab, int count);
@@ -52,5 +50,4 @@ int					check_valid_pos(int pos, int taille_map, char *tetri,
 					char *map);
 int					min_size(int n);
 int					solve(int count, char **tab, int size);
-
 #endif

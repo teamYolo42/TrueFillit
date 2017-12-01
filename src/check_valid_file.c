@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_valid_file.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:06:30 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/01 14:06:34 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/12/01 14:07:47 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int		check_onepiece(char *str, int i, int calc_diez, int local_i)
 {
