@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 13:57:42 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/01 14:01:48 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		print_error(void)
 {
-	ft_putstr("error\n");
+	ft_putendl("error");
 }
 
 static	int		ft_fillit(char *map)
