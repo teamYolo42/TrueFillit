@@ -1,34 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebertin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
+/*   Updated: 2017/12/01 13:14:23 by ebertin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-static void    print_error(void)
+static void		print_error(void)
 {
-    ft_putstr("error\n");
+	ft_putstr("error\n");
 }
 
-int            main(int ac, char **av)
+int				main(int ac, char **av)
 {
-    char    **tab;
-    int        count;
+	char	**tab;
+	int		count;
 
-    if (ac != 2)
-    {
-        ft_putstr("usage: fillit input_file\n");
-        return (0);
-    }
-    if (check_valid_file(av[1]))
-    {
-        count = count_tetri(av[1]);
-        tab = fill_tab(count, av[1]);
-        if (check_valid_tetri_nb_diez(tab, count) && count <= 26)
-        {
-            up_left(tab, count);
-            if (check_valid_tetri(tab, count, init_tetritype()))
-            {
-                ft_replace_char_all(tab, count);
-                if (solve(count, tab, min_size(count)))
-                    return (0);
-            }
-        }
-    }
-    print_error();
+	if (ac != 2)
+	{
+		ft_putstr("usage: fillit input_file\n");
+		return (0);
+	}
+	if (check_valid_file(av[1]))
+	{
+		count = count_tetri(av[1]);
+		tab = fill_tab(count, av[1]);
+		if (check_valid_tetri_nb_diez(tab, count) && count <= 26)
+		{
+			up_left(tab, count);
+			if (check_valid_tetri(tab, count, init_tetritype()))
+			{
+				ft_replace_char_all(tab, count);
+				if (solve(count, tab, min_size(count)))
+					return (0);
+			}
+		}
+	}
+	print_error();
 }

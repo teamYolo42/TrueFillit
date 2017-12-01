@@ -1,63 +1,52 @@
-#include "fillit.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebertin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
+/*   Updated: 2017/12/01 13:18:00 by ebertin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char        *alloc_map(char *map, size_t size)
+#ifndef FILLIT_H
+# define FILLIT_H
+
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include "../libft/libft.h"
+# include <stdio.h>
+
+typedef struct		s_var_struct_vp
 {
-    if (map)
-        free(map);
-    if (!(map = (char*)malloc(sizeof(char) * (size * size + 1))))
-        return (0);
-    ft_memset(map, '.', size * size);
-    map[size * size] = '\0';
-    return (map);
-}
-
-char        *try(t_var_struct_try var, int size, char **tetris, int t)
+	int i;
+	int savepos;
+	int linmap;
+	int linmapa;
+	int nbdiez;
+}					t_var_struct_vp;
+typedef struct		s_var_struct_try
 {
-    int        i;
-    char    *temp;
+	int		count;
+	char	*map;
+}					t_var_struct_try;
 
-    i = 0;
-    while (i < size * size)
-    {
-        if (check_valid_pos(i, size, tetris[t], var.map))
-        {
-            var.map = place_tetri(i, size, tetris[t], var.map);
-            if (t + 1 == var.count)
-                return (var.map);
-            temp = try(var, size, tetris, t + 1);
-            if (temp)
-                return (temp);
-            else
-                ft_replace_char(var.map, 'A' + t, '.');
-        }
-        i++;
-    }
-    return (0);
-}
-
-int            solve(int count, char **tab, int size)
-{
-    char                *temp;
-    t_var_struct_try    var;
-
-    var.count = count;
-    while (size < 100)
-    {
-        var.map = NULL;
-        if (!(var.map = alloc_map(var.map, size)))
-            return (0);
-        temp = try(var, size, tab, 0);
-        if (temp)
-        {
-            while (*temp)
-            {
-                write(1, temp, size);
-                temp += size;
-                ft_putchar('\n');
-            }
-            return (1);
-        }
-        size++;
-    }
-    return (0);
-}
+int					count_tetri(char *filename);
+int					check_valid_file(const char *filename);
+char				**fill_tab(int count, char *filename);
+char				**init_tetritype(void);
+int					check_valid_tetri(char **tab, int nb, char **tetritype);
+int					check_valid_tetri_nb_diez(char **tab, int count);
+void				ft_replace_char(char *s, char a, char b);
+void				up_left(char **tab, int count);
+void				ft_replace_char_all(char **tab, int count);
+char				*place_tetri(int pos, int taille_map, char *tetri,
+					char *map);
+int					check_valid_pos(int pos, int taille_map, char *tetri,
+					char *map);
+int					min_size(int n);
+int					solve(int count, char **tab, int size);
+#endif
