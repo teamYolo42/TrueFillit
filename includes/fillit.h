@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebertin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 13:18:00 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/12/01 13:24:35 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include "../libft/libft.h"
 # include <stdio.h>
 
