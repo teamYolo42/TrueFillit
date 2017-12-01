@@ -12,51 +12,35 @@
 
 #include "../includes/fillit.h"
 
-static void	print_error(void)
+static void		print_error(void)
 {
 	ft_putendl("error");
 }
 
-static int	ft_fillit(char *map)
+int				main(int ac, char **av)
 {
-	char	**smap;
+	char	**tab;
 	int		count;
-
-	if (check_valid_file(map))
-	{
-		count = count_tetri(map);
-		smap = fill_tab(map);
-		if (check_valid_tetri_nb_diez(smap, count) && count <= 26)
-		{
-			up_left(smap, count);
-			if (check_valid_tetri(smap, count, init_tetritype()))
-			{
-				ft_replace_char_all(smap, count);
-				if (solve(count, smap, min_size(count)))
-					return (1);
-			}
-		}
-	}
-	return (0);
-}
-
-int			main(int ac, char **av)
-{
-	char	*map;
-	int		fd;
 
 	if (ac != 2)
 	{
 		ft_putstr("usage: fillit input_file\n");
-		return (1);
-	}
-	if ((fd = ft_open(av[1])) == -1)
-	{
-		ft_putendl("error");
-		return (1);
-	}
-	map = ft_read(fd);
-	if (ft_fillit(map))
 		return (0);
+	}
+	if (check_valid_file(av[1]))
+	{
+		count = count_tetri(av[1]);
+		tab = fill_tab(count, av[1]);
+		if (check_valid_tetri_nb_diez(tab, count) && count <= 26)
+		{
+			up_left(tab, count);
+			if (check_valid_tetri(tab, count, init_tetritype()))
+			{
+				ft_replace_char_all(tab, count);
+				if (solve(count, tab, min_size(count)))
+					return (0);
+			}
+		}
+	}
 	print_error();
 }
