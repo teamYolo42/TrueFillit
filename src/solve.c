@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebertin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:14:39 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 13:15:38 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/12/01 13:25:23 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 char		*alloc_map(char *map, size_t size)
 {
