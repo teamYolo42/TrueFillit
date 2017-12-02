@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   place_tetri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 15:29:32 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/02 17:25:58 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/12/02 18:00:05 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "../includes/fillit.h"
-#include <stdio.h>
-#include <string.h>
+#include "../includes/fillit.h"
 
 char	*place_tetri(int cursor, int size, char *tetri, char *map)
 {
@@ -23,7 +21,6 @@ char	*place_tetri(int cursor, int size, char *tetri, char *map)
 
 	i = 0;
 	x = 0;
-	temp = ;
 	temp_i = 4;
 	while (tetri[i] && map[cursor])
 	{
@@ -40,10 +37,4 @@ char	*place_tetri(int cursor, int size, char *tetri, char *map)
 			i++;
 	}
 	return (map);
-}
-
-int main(void)
-{
-	printf("%s\n", place_tetri(3, 5, strdup("AAAA............"), strdup("BB..BB..........")));
-	return 0;
 }

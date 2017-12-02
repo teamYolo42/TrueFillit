@@ -23,7 +23,7 @@ int		check_valid_pos(int cursor, int size, char *tetri, char *map)
 
 	i = 0;
 	x = 0;
-	temp_cursor = ;
+	temp_cursor = 0;
 	temp_i = 4;
 	while (tetri[i] && map[cursor])
 	{
