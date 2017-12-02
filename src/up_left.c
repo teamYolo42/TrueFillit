@@ -55,7 +55,7 @@ int main(int ac, char **av)
 	}
 	map = ft_read(fd);
 	smap = fill_tab(map);
-	up_left(smap, 4);
+	up_left(smap, count_tetri(map));
 	while (smap[x])
 	{
 		j = 0;
