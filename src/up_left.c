@@ -46,7 +46,7 @@ int main(int ac, char **av)
 	int fd;
 	char *map;
 	char **smap;
-	int	x;
+	int	x, j = 0;
 
 	if ((fd = ft_open(av[1])) == -1)
 	{
@@ -56,8 +56,16 @@ int main(int ac, char **av)
 	map = ft_read(fd);
 	smap = fill_tab(map);
 	up_left(smap, 4);
-	x = 0;
-	//while (smap[x])
-	//	ft_putendl(smap[x++]);
+	while (smap[x])
+	{
+		ft_putendl(smap[x]);
+		if (j == 4)
+		{
+			ft_putchar('\n');
+			j = 0;
+		}
+		j++;
+		x++;
+	}
 	return (0);
 }
