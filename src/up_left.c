@@ -7,24 +7,17 @@
 
 void	up_line(char *str)
 {
-	//temps que aucun des caracteres de la prmiere ligne est un #, on continue
 	while (!ft_strnstr(str, "#", 4))
 	{
-		//decale les caracteres de la ligne vers la ligne au dessus
-		//str est la destination, str + 4 est l'adresse du prmier caractere de la ligne suivante, 12 c'est le nombre de caracteres
-		//a rehausse
 		ft_memmove(str, str + 4, 12);
-		//la derniere ligne est remplie de .
 		ft_memset(str + 12, '.', 4);
 	}
 }
 
 void	left_col(char *str)
 {
-	//temps que la colone de gauche ne contient pas des #, on les bouges a gauche
 	while (str[0] != '#' && str[4] != '#' && str[8] != '#' && str[12] != '#')
 	{
-		//on decale les trois caracteres de droites de 1 vers la gauche
 		ft_memmove(str, str + 1, 3);
 		str[3] = '.';
 		ft_memmove(str + 4, str + 5, 3);
@@ -48,12 +41,23 @@ void	up_left(char **tab, int count)
 	}
 }
 
-int main(int argc, char *argv[])
+int main(int ac, char **av)
 {
-	char *map[16];
+	int fd;
+	char *map;
+	char **smap;
+	int	x;
 
-	map[0] = ft_strdup("..........##..##");
-	up_left(map, 1);
-	printf("%s\n", map[0]);
-	return (0);
+	if ((fd = ft_open(av[1])) == -1)
+	{
+		ft_putendl("error");
+		return (1);
+	}
+	map = ft_read(fd);
+	smap = fill_tab(map);
+	up_left(smap, 4);
+	x = 0;
+	while (smap[x])
+		ft_putendl(smap[x++]);
+	return 0;
 }
