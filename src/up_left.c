@@ -57,7 +57,7 @@ int main(int ac, char **av)
 	smap = fill_tab(map);
 	up_left(smap, 4);
 	x = 0;
-	while (smap[x])
-		ft_putendl(smap[x++]);
-	return 0;
+	//while (smap[x])
+	//	ft_putendl(smap[x++]);
+	return (0);
 }
