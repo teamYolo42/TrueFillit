@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:14:39 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 14:44:31 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/02 15:01:31 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char			*try(t_var_struct_try var, int size, char **tetris, int t)
 	i = 0;
 	while (i < size * size)
 	{
-		if (check_valid_pos(i, size, tetris[t], var.map))
+		if (check_valid_pos(i, tetris[t], var.map))
 		{
 			var.map = place_tetri(i, size, tetris[t], var.map);
 			if (t + 1 == var.count)

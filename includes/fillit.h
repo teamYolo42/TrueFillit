@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/01 16:22:08 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/02 15:01:29 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ void				up_left(char **tab, int count);
 void				ft_replace_char_all(char **tab);
 char				*place_tetri(int pos, int taille_map, char *tetri,
 					char *map);
-int					check_valid_pos(int pos, int taille_map, char *tetri,
-					char *map);
+int					check_valid_pos(int pos, char *tetri, char *map);
 int					min_size(int n);
 int					solve(int count, char **tab, int size);
 #endif
