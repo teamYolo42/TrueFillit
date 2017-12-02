@@ -6,13 +6,20 @@
 /*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 11:57:35 by pcartau           #+#    #+#             */
+<<<<<<< Updated upstream
 /*   Updated: 2017/12/02 18:02:33 by ebertin          ###   ########.fr       */
+=======
+/*   Updated: 2017/12/02 18:01:34 by asandolo         ###   ########.fr       */
+>>>>>>> Stashed changes
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+<<<<<<< Updated upstream
 #include <stdio.h>
 #include <string.h>
+=======
+>>>>>>> Stashed changes
 
 int		check_valid_pos(int cursor, int size, char *tetri, char *map)
 {
@@ -41,6 +48,7 @@ int		check_valid_pos(int cursor, int size, char *tetri, char *map)
 	}
 	return ((x == 4) ? 1 : 0);
 }
+<<<<<<< Updated upstream
 
 int main(void)
 {
@@ -91,3 +99,5 @@ int			check_valid_possub(int pos, int taille_map, char *tetri, char *map)
 	}
 	return (0);
 }
+=======
+>>>>>>> Stashed changes
