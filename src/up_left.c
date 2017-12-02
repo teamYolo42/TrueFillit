@@ -1,8 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   up_left.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/02 14:58:50 by asandolo          #+#    #+#             */
+/*   Updated: 2017/12/02 14:58:54 by asandolo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fillit.h"
 
 void	up_line(char *str)
@@ -39,35 +46,4 @@ void	up_left(char **tab, int count)
 		up_line(tab[i]);
 		left_col(tab[i++]);
 	}
-}
-
-int main(int ac, char **av)
-{
-	int fd;
-	char *map;
-	char **smap;
-	int	x, j = 0;
-
-	if ((fd = ft_open(av[1])) == -1)
-	{
-		ft_putendl("error");
-		return (1);
-	}
-	map = ft_read(fd);
-	smap = fill_tab(map);
-	up_left(smap, count_tetri(map));
-	while (smap[x])
-	{
-		j = 0;
-		while(smap[x][j])
-		{
-			ft_putchar(smap[x][j]);
-			j++;
-			if(j % 4 == 0)
-				ft_putchar('\n');
-		}
-		putchar('\n');
-		x++;
-	}
-	return (0);
 }
