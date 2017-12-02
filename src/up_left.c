@@ -58,13 +58,15 @@ int main(int ac, char **av)
 	up_left(smap, 4);
 	while (smap[x])
 	{
-		ft_putendl(smap[x]);
-		if (j == 4)
+		j = 0;
+		while(smap[x][j])
 		{
-			ft_putchar('\n');
-			j = 0;
+			ft_putchar(smap[x][j]);
+			j++;
+			if(j % 4 == 0)
+				ft_putchar('\n');
 		}
-		j++;
+		putchar('\n');
 		x++;
 	}
 	return (0);
