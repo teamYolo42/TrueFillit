@@ -6,13 +6,13 @@
 /*   By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:20:14 by asandolo          #+#    #+#             */
-/*   Updated: 2017/12/01 16:22:59 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/02 15:27:48 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-static void		ft_replace(char *str, char r, char c)
+void		ft_replace_char(char *str, char r, char c)
 {
 	size_t i;
 
@@ -39,7 +39,7 @@ void			ft_replace_char_all(char **map)
 		j = 0;
 		while (j < 4)
 		{
-			ft_replace(map[i], '#', c);
+			ft_replace_char(map[i], '#', c);
 			j++;
 			i++;
 		}
