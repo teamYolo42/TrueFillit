@@ -6,7 +6,7 @@
 /*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:06:30 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/01 14:17:32 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/12/02 15:32:30 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int		check_diez(char *str)
 	return (1);
 }
 
-int		ft_error(char *str)
+int		check_valid_file(char *str)
 {
 	int i;
 
