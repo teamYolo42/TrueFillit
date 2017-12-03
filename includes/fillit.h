@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 13:48:27 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 16:44:37 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ typedef struct		s_var_struct_vp
 	int nbdiez;
 	int cursor;
 }					t_variable;
+
+typedef struct		s_pl_tr
+{
+	int tmp_cursor;
+	int quatre;
+	int stop;
+	int save_stop;
+	int i;
+}					t_pl_tr;
 
 typedef struct		s_var_struct_try
 {

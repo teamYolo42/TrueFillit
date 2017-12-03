@@ -6,7 +6,7 @@
 /*   By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:20:14 by asandolo          #+#    #+#             */
-/*   Updated: 2017/12/03 14:08:39 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/12/03 14:09:20 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ void			ft_replace_char_all(char **map)
 		i++;
 		c++;
 	}
-	puttab(map);
 }

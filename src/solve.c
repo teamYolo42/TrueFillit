@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:14:39 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 13:46:00 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 14:17:37 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int					solve(int count, char **tab, int size)
 	t_var_struct_try	var;
 
 	var.count = count;
-	while (size < 100)
+	while (size < 20)
 	{
 		var.map = NULL;
 		if (!(var.map = alloc_map(var.map, size)))
@@ -64,7 +64,7 @@ int					solve(int count, char **tab, int size)
 			while (*temp)
 			{
 				write(1, temp, size);
-				temp += size;
+				temp = temp + size;
 				ft_putchar('\n');
 			}
 			return (1);
