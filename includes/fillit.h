@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 16:44:37 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 17:44:03 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int					solve(int count, char **tab, int size);
 int					check_valid_file(char *str);
 int					check_valid_pos(int curs, int size, char *tetri, char *map);
 int					init_temp(int cursor, int size);
-t_variable			checker(t_variable var, int cursor);
+void				puttetri(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 15:29:32 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/03 16:50:25 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 17:48:36 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*
 ** fonction qui calcule la fin de la ligne associe a un cursor
 */
-
 
 int		init_temp(int cursor, int size)
 {

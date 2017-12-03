@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:14:39 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 14:17:37 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 17:47:26 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,7 @@ int					solve(int count, char **tab, int size)
 		temp = try(var, size, tab, 0);
 		if (temp)
 		{
-			while (*temp)
-			{
-				write(1, temp, size);
-				temp = temp + size;
-				ft_putchar('\n');
-			}
+			puttetri(temp);
 			return (1);
 		}
 		size++;
