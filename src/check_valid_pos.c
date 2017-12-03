@@ -6,7 +6,7 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 11:57:35 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/03 11:25:56 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/12/03 13:34:21 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,6 @@ variable	checker(variable var, int cursor)
 			var.i++;
 	}
 	return (var);
-}
-
-int init_temp(int cursor, int size)
-{
-	int i;
-
-	while (cursor != size * size)
-	{
-		i = 0;
-		while (i < size)
-		{
-			i++;
-			if (cursor == ((i * size) - 1))
-				return (cursor);
-		}
-		cursor++;
-	}
-	return (cursor);
 }
 
 int		check_valid_pos(int curs, int size, char *tetri, char *map)
@@ -72,9 +54,9 @@ int		check_valid_pos(int curs, int size, char *tetri, char *map)
 	}
 	return ((var.nbdiez == 4) ? 1 : 0);
 }
-
+/*
 int main(void)
 {
 	printf("%d\n", check_valid_pos(0, 4, strdup("AAAA............"), strdup("................")));
 	return 0;
-}
+}*/

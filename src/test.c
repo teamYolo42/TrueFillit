@@ -12,9 +12,9 @@ int test_de_vic(int cursor, int size)
 }
 
 #include <stdio.h>
-
+/*
 int main(int argc, const char *argv[])
 {
 	printf("%d\n" ,test_de_vic(9, 8));
 	return 0;
-}
+}*/
