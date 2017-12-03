@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 13:30:20 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 13:51:50 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ int			main(int ac, char **av)
 	if (ft_fillit(map))
 		return (0);
 	print_error();
+	return(0);
 }

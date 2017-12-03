@@ -6,15 +6,13 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 15:29:32 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/03 13:35:05 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 13:47:10 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include <stdio.h>
-#include <string.h>
 
-int init_temp(int cursor, int size)
+int		init_temp(int cursor, int size)
 {
 	int i;
 
@@ -34,7 +32,7 @@ int init_temp(int cursor, int size)
 
 char	*place_tetri(int curs, int size, char *tetri, char *map)
 {
-	variable var;
+	t_variable var;
 
 	var.i = 0;
 	var.cursor = curs;
@@ -59,9 +57,3 @@ char	*place_tetri(int curs, int size, char *tetri, char *map)
 	}
 	return (map);
 }
-/*
-int main(void)
-{
-	printf("%s\n", place_tetri(8, 4, strdup("AAAA............"), strdup("BB..BB..........")));
-	return 0;
-}*/

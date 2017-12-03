@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 13:35:34 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 13:48:27 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 # include <stdio.h>
+# include <string.h>
 
 typedef struct		s_var_struct_vp
 {
@@ -28,7 +29,7 @@ typedef struct		s_var_struct_vp
 	int temp_i;
 	int nbdiez;
 	int cursor;
-}					variable;
+}					t_variable;
 
 typedef struct		s_var_struct_try
 {
@@ -54,7 +55,6 @@ int					solve(int count, char **tab, int size);
 int					check_valid_file(char *str);
 int					check_valid_pos(int curs, int size, char *tetri, char *map);
 int					init_temp(int cursor, int size);
-variable			checker(variable var, int cursor);
-
+t_variable			checker(t_variable var, int cursor);
 
 #endif

@@ -6,15 +6,13 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 11:57:35 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/03 13:34:21 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 13:47:21 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include <stdio.h>
-#include <string.h>
 
-variable	checker(variable var, int cursor)
+t_variable	checker(t_variable var, int cursor)
 {
 	while (cursor != var.temp_cursor || var.i != var.temp_i)
 	{
@@ -26,9 +24,9 @@ variable	checker(variable var, int cursor)
 	return (var);
 }
 
-int		check_valid_pos(int curs, int size, char *tetri, char *map)
+int			check_valid_pos(int curs, int size, char *tetri, char *map)
 {
-	variable var;
+	t_variable var;
 
 	var.i = 0;
 	var.nbdiez = 0;
@@ -54,9 +52,3 @@ int		check_valid_pos(int curs, int size, char *tetri, char *map)
 	}
 	return ((var.nbdiez == 4) ? 1 : 0);
 }
-/*
-int main(void)
-{
-	printf("%d\n", check_valid_pos(0, 4, strdup("AAAA............"), strdup("................")));
-	return 0;
-}*/
