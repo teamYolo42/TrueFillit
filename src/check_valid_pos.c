@@ -6,21 +6,28 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 11:57:35 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/03 13:47:21 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/03 16:54:37 by pcartau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+#include <stdio.h>
+#include <string.h>
 
-t_variable	checker(t_variable var, int cursor)
+t_variable	checker(t_variable var, int size, int curs, int k)
 {
-	while (cursor != var.temp_cursor || var.i != var.temp_i)
+	while (var.cursor != var.temp_cursor || var.i != var.temp_i)
 	{
-		if (cursor != var.temp_cursor)
-			cursor++;
+		if (var.cursor != var.temp_cursor)
+			var.cursor++;
 		if (var.i != var.temp_i)
 			var.i++;
 	}
+	while (var.cursor != curs + size * k)
+		var.cursor++;
+	var.i++;
+	var.temp_cursor += size;
+	var.temp_i += 4;
 	return (var);
 }
 
@@ -28,11 +35,13 @@ int			check_valid_pos(int curs, int size, char *tetri, char *map)
 {
 	t_variable var;
 
+	int k;
 	var.i = 0;
 	var.nbdiez = 0;
 	var.cursor = curs;
 	var.temp_cursor = init_temp(var.cursor, size);
 	var.temp_i = 3;
+	k = 1;
 	while (tetri[var.i] && map[var.cursor])
 	{
 		while (var.i != var.temp_i && var.cursor != var.temp_cursor)
@@ -44,11 +53,8 @@ int			check_valid_pos(int curs, int size, char *tetri, char *map)
 		}
 		if (tetri[var.i] != '.' && map[var.cursor] == '.')
 			var.nbdiez++;
-		var = checker(var, var.cursor);
-		var.temp_cursor += size;
-		var.temp_i += 4;
-		var.i++;
-		var.cursor++;
+		var = checker(var, size, curs, k);
+		k++;
 	}
 	return ((var.nbdiez == 4) ? 1 : 0);
 }
