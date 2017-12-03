@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:17:30 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/02 18:01:33 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/03 11:27:13 by pcartau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@
 typedef struct		s_var_struct_vp
 {
 	int i;
-	int savepos;
-	int linmap;
-	int linmapa;
+	int temp_cursor;
+	int temp_i;
 	int nbdiez;
-}					t_var_struct_vp;
+	int cursor;
+}					variable;
+
 typedef struct		s_var_struct_try
 {
 	int		count;
@@ -38,7 +39,7 @@ typedef struct		s_var_struct_try
 int					ft_open(char *name);
 char				*ft_read(int fd);
 int					count_tetri(char *map);
-int					check_valid_file(char *str);
+int					check_valid_file(const char *map);
 char				**fill_tab(char *map);
 char				**init_tetritype(void);
 int					check_valid_tetri(char **tab, int nb, char **tetritype);
@@ -48,7 +49,7 @@ void				up_left(char **tab, int count);
 void				ft_replace_char_all(char **tab);
 char				*place_tetri(int pos, int taille_map, char *tetri,
 					char *map);
-int					check_valid_pos(int cursor, int size, char *tetri,
+int					check_valid_pos(int pos, int taille_map, char *tetri,
 					char *map);
 int					min_size(int n);
 int					solve(int count, char **tab, int size);
