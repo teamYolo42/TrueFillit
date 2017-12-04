@@ -6,7 +6,7 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 15:29:32 by pcartau           #+#    #+#             */
-/*   Updated: 2017/12/03 17:48:36 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/04 11:09:14 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	puttetri(char *str)
 	i = 0;
 	v = 1;
 	x = ft_strlen(str);
-	while (w * w != x)
+	while (w * w < x)
 		w++;
 	while (str[i])
 	{
@@ -74,17 +74,20 @@ char	*place_tetri(int curs, int size, char *tetri, char *map)
 
 	v.quatre = 0;
 	v.stop = init_temp(curs, size) - curs + 1;
-	v.save_stop = v.stop;
 	v.i = 0;
 	v.tmp_cursor = curs;
+	if (v.stop >= 4)
+		v.stop = 4;
+	v.save_stop = v.stop;
 	while (v.quatre++ != 4)
 	{
-		while (v.stop-- != 0)
+		while (v.stop != 0)
 		{
 			if (tetri[v.i] != '.')
 				map[curs] = tetri[v.i];
 			curs++;
 			v.i++;
+			v.stop--;
 		}
 		v.stop = v.save_stop;
 		curs = v.tmp_cursor + size;

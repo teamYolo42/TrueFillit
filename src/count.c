@@ -6,11 +6,15 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:34:14 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/02 14:56:33 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/03 17:56:04 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+
+/*
+** fonction contant le nombre de tetriminos qui nous sont envoyes
+*/
 
 int	count_tetri(char *map)
 {
