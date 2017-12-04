@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 13:13:41 by ebertin           #+#    #+#             */
-/*   Updated: 2017/12/03 17:54:16 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/04 12:25:07 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			main(int ac, char **av)
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
-	if ((fd = ft_open(av[1])) == -1)
+	if ((fd = ft_open(av[1])) == 0)
 	{
 		ft_putendl("error");
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 11:26:28 by vgauther          #+#    #+#             */
-/*   Updated: 2017/12/04 11:26:30 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/12/04 12:26:28 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 int		ft_open(char *name)
 {
 	int		fd;
-	char	*error;
 
-	error = ft_strjoin("open() error ", name);
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
-	{
-		ft_putendl(error);
 		return (0);
-	}
 	return (fd);
 }
 
