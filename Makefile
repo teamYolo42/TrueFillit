@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+         #
+#    By: vgauther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/11/15 10:56:13 by asandolo          #+#    #+#              #
-#    Updated: 2017/12/02 17:58:35 by asandolo         ###   ########.fr        #
+#    Created: 2017/12/04 11:24:28 by vgauther          #+#    #+#              #
+#    Updated: 2017/12/04 11:25:49 by vgauther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,10 @@ SRC = src/main.c src/check_valid_file.c src/check_valid_pos.c src/count.c \
 	src/ft_or.c src/min_size.c src/place_tetri.c src/replacetag.c src/solve.c \
 	src/tab.c src/up_left.c
 OBJ = $(SRC:.c=.o)
-CFLAGS = -Wall -Werror -Wextra -ggdb
+CFLAGS = -Wall -Werror -Wextra
 CC = gcc
+
+.PHONY: clean fclean re re-bis
 
 all : $(NAME)
 
@@ -59,5 +61,3 @@ re-bis:
 	@echo "$(RESET)$(BOLDRED)Removing exe$(WHITE)$(RESET)"
 	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) -I libft/ -L libft/ -lft
 	@echo "$(RESET)$(GREEN)Compiling fillit.. $(WHITE)$(RESET)"
-
-.PHONY: clean fclean re re-bis
